@@ -1,0 +1,18 @@
+<title><%= @page_title %></title>
+<section class="phx-hero">
+  <h1><%= gettext "Welcome to %{name}!", name: "Authenticate" %></h1>
+  <p>Peace-of-mind from prototype to production</p>
+
+  <form phx-submit="login">
+    <input type="text" name="email" value="<%= @auth_form.email %>" placeholder="Email" />
+    <input type="password" name="password" value="<%= @auth_form.password %>" placeholder="Password" />
+
+    <button type="submit">Login
+        <%= if @loading do %>
+            <span class="loader">
+            Loading...
+            </span>
+        <% end %>
+    </button>
+  </form>
+</section>
