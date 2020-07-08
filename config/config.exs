@@ -41,6 +41,6 @@ config :let_inv, :pow,
 
   config :let_inv, LetInv.Mailer,
     adapter: Swoosh.Adapters.Mailgun,
-    api_key: "9825c1146b146f8d0d3c1bfc83bfcbef-f877bd7a-db48ca29",
-    domain: "mailgun.rentch.ng"
+    api_key: System.get_env("MAILGUN_API_KEY"),
+    domain: System.get_env("MAILGUN_DOMAIN")
     
